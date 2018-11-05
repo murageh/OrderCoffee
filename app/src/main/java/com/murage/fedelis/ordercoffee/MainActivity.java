@@ -181,6 +181,11 @@ public class MainActivity extends AppCompatActivity {
         builder.setIcon(R.mipmap.ic_launcher);
         final EditText nameGetter = new EditText(this);
         nameGetter.setHint("Enter name");
+        nameGetter.setLeft(8);
+        nameGetter.setRight(8);
+        nameGetter.setTop(5);
+        nameGetter.setBottom(5);
+        nameGetter.setPadding(20,20,20,20);
         builder.setView(nameGetter);
         builder.setMessage("Can you please tell us your name?")
                 .setCancelable(false)
