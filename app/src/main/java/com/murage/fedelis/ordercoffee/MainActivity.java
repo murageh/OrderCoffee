@@ -127,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(R.string.app_name);
         builder.setIcon(R.mipmap.ic_launcher);
-        builder.setMessage("Thank you for taking coffee with us. \n :-) \n Your "+numberOfCups.getText().toString()+
+        builder.setMessage("Thank you for taking coffee with us. \n :-) \n Your order: "+numberOfCups.getText().toString()+
                 " of "+Temperature+" "+CoffeeType+" will be delivered to you within the next 15 minutes. Stay put.  Remember, we always care for you.")
                 .setCancelable(false)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
