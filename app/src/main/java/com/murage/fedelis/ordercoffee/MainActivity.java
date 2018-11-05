@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+    String name="";
     EditText numberOfCups;
     TextView txtUserSalutation, txtTitle, billAmount, txtInfo;
     Button checkOutButton;
@@ -131,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(R.string.app_name);
         builder.setIcon(R.mipmap.ic_launcher);
-        builder.setMessage("Thank you for taking coffee with us. \n :-) \n Your "+numberOfCups+
+        builder.setMessage("Thank you for taking coffee with us. \n :-) \n Your "+numberOfCups.getText().toString()+
                 " of "+Temperature+" "+CoffeeType+" will be delivered to you within the next 15 minutes. Stay put.  Remember, we always care for you.")
                 .setCancelable(false)
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
@@ -178,4 +179,5 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog alert = builder.create();
         alert.show();
     }
+
 }
