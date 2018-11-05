@@ -78,9 +78,11 @@
                 android:layout_height="65dp"
                 android:padding="10dp"
                 android:text="Steaming hot Capuccino"
+                android:textAppearance="@style/TextAppearance.AppCompat"
                 android:textSize="16sp"
                 android:typeface="serif"
-                app:fontFamily="cursive" />
+                app:fontFamily="cursive"
+                android:background="@android:color/holo_orange_light"/>
 
             <EditText
                 android:id="@+id/numberOfCups"

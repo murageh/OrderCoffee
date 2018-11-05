@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         checkOutButton = findViewById(R.id.checkoutButton);
         progressBar = findViewById(R.id.progressBar);
         txtInfo = findViewById(R.id.txtInfo);
+        askName();
 
         progressBar.setVisibility(View.GONE);
         txtInfo.setText(Temperature+" "+CoffeeType+"\n Sugar: "+amountOfSugar+" teaspoons. \t "+"(Click to change)");
