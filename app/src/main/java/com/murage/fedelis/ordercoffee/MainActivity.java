@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     Button checkOutButton;
     ProgressBar progressBar;
     final double RATE = 2.5;
-    int amountOfSugar = 2;
+    int amountOfSugar = 2, order=0;
     String Temperature = "Steaming hot", CoffeeType = "Cappuccino";
 
     @Override
@@ -85,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 numberOfCups.setText("");
+                order = Integer.parseInt(numberOfCups.getText().toString()+"0")/10;
                 checkOut();
             }
         });
@@ -127,8 +128,8 @@ public class MainActivity extends AppCompatActivity {
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(R.string.app_name);
         builder.setIcon(R.mipmap.ic_launcher);
-        builder.setMessage("Thank you for taking coffee with us. \n :-) \n Your order: "+numberOfCups.getText().toString()+
-                " of "+Temperature+" "+CoffeeType+" will be delivered to you within the next 15 minutes. Stay put.  Remember, we always care for you.")
+        builder.setMessage("Thank you for taking coffee with us. \n :-) \n Your order: "+order+" cups of "
+                +Temperature+" "+CoffeeType+" will be delivered to you within the next 15 minutes. Stay put.  Remember, we always care for you.")
                 .setCancelable(false)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
