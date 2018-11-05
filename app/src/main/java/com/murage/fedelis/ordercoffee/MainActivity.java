@@ -2,26 +2,20 @@ package com.murage.fedelis.ordercoffee;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.text.Editable;
-import android.text.InputType;
 import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     String name="";
@@ -65,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
                 if (_ignore)
                     return;
                 _ignore = true;
-                if ((s.toString() == "") || (s.toString() == null)){
+                if (s.toString() == ""){
                     billAmount.setText("Bill amount \n $0.00");
                 }else{
                     double billAmount = (Double.parseDouble((s.toString()+0))*RATE/10);
