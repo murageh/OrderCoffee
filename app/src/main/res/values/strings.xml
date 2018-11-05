@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">OrderCoffee</string>
+    <array name="CoffeeChoice">
+        <item>Espresso</item>
+        <item>Cappuccino</item>
+        <item>Americano</item>
+        <item>Mochiato</item>
+        <item>Mocha</item>
+        <item>Latte</item>
+    </array>
+    <array name="Temperature">
+        <item>Steaming hot</item>
+        <item>Iced</item>
+    </array>
+    <string name="exit">Exit</string>
+    <string name="CoffeeOptions">Coffee Options</string>
+</resources>

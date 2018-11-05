@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_light"
+    tools:context=".MainActivity"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/background_light"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center|fill"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtUserSalutation"
+                android:layout_width="match_parent"
+                android:layout_height="31dp"
+                android:layout_gravity="end"
+                android:text="Hello, Murageh"
+                android:textAlignment="textEnd"
+                android:textSize="18sp"
+                android:typeface="serif"
+                app:fontFamily="cursive" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="128dp"
+                android:layout_height="57dp"
+                android:layout_gravity="center"
+                android:background="@drawable/coffee" />
+
+            <TextView
+                android:id="@+id/txtTitle"
+                android:layout_width="match_parent"
+                android:layout_height="51dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="OrderCoffee"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:typeface="serif"
+                app:fontFamily="cursive"
+                tools:layout_editor_absoluteX="130dp"
+                tools:layout_editor_absoluteY="30dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtInfo"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:padding="10dp"
+                android:text="Steaming hot Capuccino"
+                android:textSize="16sp"
+                android:typeface="serif"
+                app:fontFamily="cursive" />
+
+            <EditText
+                android:id="@+id/numberOfCups"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="Number of cups"
+                android:inputType="number"
+                android:padding="10sp"
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_blue_dark"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="216dp" />
+
+            <TextView
+                android:id="@+id/coffeePriceText"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Current price: $2.5 per cup"
+                android:textAlignment="center"
+                android:typeface="serif"
+                app:fontFamily="cursive"
+                tools:layout_editor_absoluteX="94dp"
+                tools:layout_editor_absoluteY="290dp" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                tools:layout_editor_absoluteX="144dp"
+                tools:layout_editor_absoluteY="412dp" />
+
+            <TextView
+                android:id="@+id/orderAmount"
+                android:layout_width="match_parent"
+                android:layout_height="134dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="Bill amount \n $0.00"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                tools:layout_editor_absoluteX="64dp"
+                tools:layout_editor_absoluteY="357dp" />
+
+            <Button
+                android:id="@+id/checkoutButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:fontFamily="casual"
+                android:text="Check out"
+                android:typeface="serif"
+                tools:layout_editor_absoluteX="193dp"
+                tools:layout_editor_absoluteY="454dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>
