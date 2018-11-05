@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
         checkOutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                numberOfCups.setText("0");
+                numberOfCups.setText("");
                 checkOut();
             }
         });
@@ -135,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
         builder.setMessage("Thank you for taking coffee with us. \n :-) \n Your "+numberOfCups.getText().toString()+
                 " of "+Temperature+" "+CoffeeType+" will be delivered to you within the next 15 minutes. Stay put.  Remember, we always care for you.")
                 .setCancelable(false)
-                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
 
                     }
@@ -179,5 +179,22 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog alert = builder.create();
         alert.show();
     }
-
+    void askName(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(R.string.app_name);
+        builder.setIcon(R.mipmap.ic_launcher);
+        final EditText nameGetter = new EditText(this);
+        nameGetter.setHint("Enter name");
+        builder.setView(nameGetter);
+        builder.setMessage("Can you please tell us your name?")
+                .setCancelable(false)
+                .setPositiveButton("That's my name", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        name = nameGetter.getText().toString();
+                        txtUserSalutation.setText("Hello, "+name);
+                    }
+                });
+        AlertDialog alert = builder.create();
+        alert.show();
+    }
 }
