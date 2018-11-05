@@ -24,7 +24,9 @@ public class MainActivity extends AppCompatActivity {
     Button checkOutButton;
     ProgressBar progressBar;
     final double RATE = 2.5;
-    int amountOfSugar = 2, order=0;
+    int amountOfSugar = 2;
+    static int order= 0;
+    static double bill=0;
     String Temperature = "Steaming hot", CoffeeType = "Cappuccino";
 
     @Override
@@ -59,11 +61,21 @@ public class MainActivity extends AppCompatActivity {
                 if (_ignore)
                     return;
                 _ignore = true;
-                if (s.toString() == ""){
+                int tempOrder = 0;
+                double tempBill =0;
+                if (s.toString() == "") {
                     billAmount.setText("Bill amount \n $0.00");
-                }else{
-                    double billAmount = (Double.parseDouble((s.toString()+0))*RATE/10);
-                    MainActivity.this.billAmount.setText("Bill amount \n $"+ billAmount);
+                } else {
+                    double billAmount = (Double.parseDouble((s.toString() + 0)) * RATE / 10);
+                    MainActivity.this.billAmount.setText("Bill amount \n $" + billAmount);
+                    tempOrder = (Integer.parseInt(s.toString() + 0) / 10);
+                    tempBill = (Double.parseDouble((s.toString() + 0))/10);
+                }
+                if (tempOrder > 0) {
+                    order = (Integer.parseInt(s.toString() + 0)) / 10;
+                }
+                if (tempBill > 0) {
+                    bill = (Double.parseDouble((s.toString() + 0))/10);
                 }
                 _ignore = false;
             }
@@ -85,7 +97,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 numberOfCups.setText("");
-                order = Integer.parseInt(numberOfCups.getText().toString()+"0")/10;
                 checkOut();
             }
         });
@@ -128,8 +139,8 @@ public class MainActivity extends AppCompatActivity {
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(R.string.app_name);
         builder.setIcon(R.mipmap.ic_launcher);
-        builder.setMessage("Thank you for taking coffee with us. \n :-) \n Your order: "+order+" cups of "
-                +Temperature+" "+CoffeeType+" will be delivered to you within the next 15 minutes. Stay put.  Remember, we always care for you.")
+        builder.setMessage("Thank you for taking coffee with us :-) \n Your order: "+order+" cups of "
+                +Temperature+" "+CoffeeType+" will be delivered to you within the next 15 minutes.\n Bill amount: $"+bill+"\n Stay put.  Remember, we always care for you.")
                 .setCancelable(false)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
@@ -178,13 +189,12 @@ public class MainActivity extends AppCompatActivity {
     void askName(){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(R.string.app_name);
-        builder.setIcon(R.mipmap.ic_launcher);
         final EditText nameGetter = new EditText(this);
         nameGetter.setHint("Enter name");
-        nameGetter.setLeft(8);
-        nameGetter.setRight(8);
-        nameGetter.setTop(5);
-        nameGetter.setBottom(5);
+        nameGetter.setLeft(15);
+        nameGetter.setRight(15);
+        nameGetter.setTop(10);
+        nameGetter.setBottom(10);
         nameGetter.setPadding(20,20,20,20);
         builder.setView(nameGetter);
         builder.setMessage("Can you please tell us your name?")
