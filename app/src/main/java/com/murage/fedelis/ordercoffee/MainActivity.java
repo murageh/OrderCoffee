@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     ProgressBar progressBar;
     final double RATE = 2.5;
     int amountOfSugar = 2;
-    String Temperature = "Steaming hot", CoffeeType = "Capuccino";
+    String Temperature = "Steaming hot", CoffeeType = "Cappuccino";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,6 +85,13 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        checkOutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                numberOfCups.setText("0");
+                checkOut();
+            }
+        });
     }
     void changeValue(){
         txtInfo.setText("Your order: "+Temperature+" "+CoffeeType+"\n Sugar: "+amountOfSugar+" teaspoons. \t "+"(Click to change)");
@@ -119,6 +126,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         dialog.show();
+    }
+    void checkOut(){
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(R.string.app_name);
+        builder.setIcon(R.mipmap.ic_launcher);
+        builder.setMessage("Thank you for taking coffee with us. \n :-) \n Your "+numberOfCups+
+                " of "+Temperature+" "+CoffeeType+" will be delivered to you within the next 15 minutes. Stay put.  Remember, we always care for you.")
+                .setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+
+                    }
+                });
+        AlertDialog alert = builder.create();
+        alert.show();
     }
 
     @Override
