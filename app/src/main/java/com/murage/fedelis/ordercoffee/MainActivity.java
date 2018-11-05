@@ -69,13 +69,13 @@ public class MainActivity extends AppCompatActivity {
                     double billAmount = (Double.parseDouble((s.toString() + 0)) * RATE / 10);
                     MainActivity.this.billAmount.setText("Bill amount \n $" + billAmount);
                     tempOrder = (Integer.parseInt(s.toString() + 0) / 10);
-                    tempBill = (Double.parseDouble((s.toString() + 0))/10);
+                    tempBill = (Double.parseDouble((s.toString() + 0)) * RATE / 10);
                 }
                 if (tempOrder > 0) {
                     order = (Integer.parseInt(s.toString() + 0)) / 10;
                 }
                 if (tempBill > 0) {
-                    bill = (Double.parseDouble((s.toString() + 0))/10);
+                    bill = (Double.parseDouble((s.toString() + 0)) * RATE / 10);
                 }
                 _ignore = false;
             }
@@ -139,12 +139,13 @@ public class MainActivity extends AppCompatActivity {
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(R.string.app_name);
         builder.setIcon(R.mipmap.ic_launcher);
-        builder.setMessage("Thank you for taking coffee with us :-) \n Your order: "+order+" cups of "
+        builder.setMessage("Thank you for taking coffee with us :-) \n Your order: "+order+((order==1)?" cup":" cups")+" of "
                 +Temperature+" "+CoffeeType+" will be delivered to you within the next 15 minutes.\n Bill amount: $"+bill+"\n Stay put.  Remember, we always care for you.")
                 .setCancelable(false)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-
+                        order=0;
+                        bill=0;
                     }
                 });
         AlertDialog alert = builder.create();
