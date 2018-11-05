@@ -2,7 +2,4 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:title="@string/exit"
         android:id="@+id/exit" />
-
-    <item android:title="@string/CoffeeOptions"
-        android:id="@+id/CoffeeOptions"/>
 </menu>

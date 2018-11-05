@@ -155,9 +155,6 @@ public class MainActivity extends AppCompatActivity {
             case R.id.exit:
                 this.onBackPressed();
                 break;
-            case R.id.CoffeeOptions:
-                DialogBox();
-                break;
         }
         return true;
 
