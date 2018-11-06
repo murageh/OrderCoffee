@@ -47,6 +47,7 @@
             android:gravity="left|center"
             android:hint="Enter number of teaspoons"
             android:inputType="number"
+            android:padding="15sp"
             android:textSize="24sp" />
 
         <Space
