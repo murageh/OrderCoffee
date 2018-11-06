@@ -84,13 +84,20 @@
                 android:typeface="serif"
                 app:fontFamily="cursive" />
 
-            <TextView
-                android:id="@+id/txtChangeOrder"
+            <Space
+                android:id="@+id/space"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical|center_horizontal"
+                android:minHeight="8sp"/>
+
+            <Button
+                android:id="@+id/btnChangeOrder"
+                android:layout_width="200sp"
+                android:layout_height="45dp"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:background="@android:color/holo_orange_light"
                 android:text="@string/ChangeOrder"
-                android:textColor="@android:color/holo_blue_dark" />
+                android:textColor="@android:color/white" />
 
             <EditText
                 android:id="@+id/numberOfCups"

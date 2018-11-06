@@ -16,12 +16,13 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     String name="";
     EditText numberOfCups;
-    TextView txtUserSalutation, txtTitle, billAmount, txtInfo, txtChangeOrder;
-    Button checkOutButton;
+    TextView txtUserSalutation, txtTitle, billAmount, txtInfo;
+    Button checkOutButton, btnChangeOrder;
     ProgressBar progressBar;
     final double RATE = 2.5;
     int amountOfSugar = 2;
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         checkOutButton = findViewById(R.id.checkoutButton);
         progressBar = findViewById(R.id.progressBar);
         txtInfo = findViewById(R.id.txtInfo);
-        txtChangeOrder = findViewById(R.id.txtChangeOrder);
+        btnChangeOrder = findViewById(R.id.btnChangeOrder);
         askName();
 
         progressBar.setVisibility(View.GONE);
@@ -81,8 +82,7 @@ public class MainActivity extends AppCompatActivity {
                 _ignore = false;
             }
         });
-        txtChangeOrder.setClickable(true);
-        txtChangeOrder.setOnClickListener(new View.OnClickListener() {
+        btnChangeOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 DialogBox();
@@ -97,8 +97,14 @@ public class MainActivity extends AppCompatActivity {
         checkOutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                numberOfCups.setText("");
-                checkOut();
+                if (!(numberOfCups.getText().toString()+"").equals("")) {
+                    numberOfCups.setText("");
+                    checkOut();
+                }else{
+                    Toast.makeText(MainActivity.this, "Please input how many cups of coffee you'd like.", Toast.LENGTH_SHORT).show();
+                    numberOfCups.requestFocus();
+                }
+
             }
         });
     }
@@ -137,6 +143,7 @@ public class MainActivity extends AppCompatActivity {
         dialog.show();
     }
     void checkOut(){
+        progressBar.setVisibility(View.VISIBLE);
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(R.string.app_name);
         builder.setIcon(R.mipmap.ic_launcher);
@@ -151,6 +158,7 @@ public class MainActivity extends AppCompatActivity {
                 });
         AlertDialog alert = builder.create();
         alert.show();
+        progressBar.setVisibility(View.GONE);
     }
 
     @Override
