@@ -76,13 +76,21 @@
                 android:id="@+id/txtInfo"
                 android:layout_width="match_parent"
                 android:layout_height="65dp"
+                android:background="@android:color/holo_orange_light"
+                android:gravity="center_vertical|center_horizontal"
                 android:padding="10dp"
-                android:text="Steaming hot Capuccino"
                 android:textAppearance="@style/TextAppearance.AppCompat"
                 android:textSize="16sp"
                 android:typeface="serif"
-                app:fontFamily="cursive"
-                android:background="@android:color/holo_orange_light"/>
+                app:fontFamily="cursive" />
+
+            <TextView
+                android:id="@+id/txtChangeOrder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/ChangeOrder"
+                android:textColor="@android:color/holo_blue_dark" />
 
             <EditText
                 android:id="@+id/numberOfCups"
@@ -90,7 +98,7 @@
                 android:layout_height="80dp"
                 android:layout_weight="1"
                 android:ems="10"
-                android:hint="Number of cups"
+                android:hint="Enter cups to order"
                 android:inputType="number"
                 android:padding="10sp"
                 android:textAlignment="center"

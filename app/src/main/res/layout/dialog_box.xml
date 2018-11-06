@@ -7,8 +7,8 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:layout_width="343dp"
-        android:layout_height="389dp"
+        android:layout_width="361dp"
+        android:layout_height="366dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
@@ -33,21 +33,21 @@
             android:typeface="serif"
             app:fontFamily="cursive" />
 
-        <EditText
-            android:id="@+id/numberOfTeaspoons"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:gravity="center"
-            android:hint="2 teaspoons"
-            android:inputType="number"
-            android:textSize="24sp" />
-
         <TextView
             android:id="@+id/txtInfo"
             android:layout_width="match_parent"
             android:layout_height="47dp"
             android:text="Enter the number of teaspoons of sugar you'd like" />
+
+        <EditText
+            android:id="@+id/numberOfTeaspoons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="left|center"
+            android:hint="2 teaspoons"
+            android:inputType="number"
+            android:textSize="24sp" />
 
         <Space
             android:layout_width="match_parent"

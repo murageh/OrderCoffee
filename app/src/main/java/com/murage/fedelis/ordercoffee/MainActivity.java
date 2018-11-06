@@ -20,7 +20,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
     String name="";
     EditText numberOfCups;
-    TextView txtUserSalutation, txtTitle, billAmount, txtInfo;
+    TextView txtUserSalutation, txtTitle, billAmount, txtInfo, txtChangeOrder;
     Button checkOutButton;
     ProgressBar progressBar;
     final double RATE = 2.5;
@@ -40,10 +40,11 @@ public class MainActivity extends AppCompatActivity {
         checkOutButton = findViewById(R.id.checkoutButton);
         progressBar = findViewById(R.id.progressBar);
         txtInfo = findViewById(R.id.txtInfo);
+        txtChangeOrder = findViewById(R.id.txtChangeOrder);
         askName();
 
         progressBar.setVisibility(View.GONE);
-        txtInfo.setText(Temperature+" "+CoffeeType+"\n Sugar: "+amountOfSugar+" teaspoons. \t "+"(Click to change)");
+        txtInfo.setText("Your order: "+Temperature+" "+CoffeeType+"\n Sugar: "+amountOfSugar+" teaspoons.");
         numberOfCups.addTextChangedListener(new TextWatcher() {
             boolean _ignore = false;
             @Override
@@ -80,8 +81,8 @@ public class MainActivity extends AppCompatActivity {
                 _ignore = false;
             }
         });
-        txtInfo.setClickable(true);
-        txtInfo.setOnClickListener(new View.OnClickListener() {
+        txtChangeOrder.setClickable(true);
+        txtChangeOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 DialogBox();
@@ -102,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     void changeValue(){
-        txtInfo.setText("Your order: "+Temperature+" "+CoffeeType+"\n Sugar: "+amountOfSugar+" teaspoons. \t "+"(Click to change)");
+        txtInfo.setText("Your order: "+Temperature+" "+CoffeeType+"\n Sugar: "+amountOfSugar+" teaspoons.");
     }
     void DialogBox(){
         final Dialog dialog = new Dialog(this);
@@ -139,8 +140,8 @@ public class MainActivity extends AppCompatActivity {
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(R.string.app_name);
         builder.setIcon(R.mipmap.ic_launcher);
-        builder.setMessage("Thank you for taking coffee with us :-) \n Your order: "+order+((order==1)?" cup":" cups")+" of "
-                +Temperature+" "+CoffeeType+" will be delivered to you within the next 15 minutes.\n Bill amount: $"+bill+"\n Stay put.  Remember, we always care for you.")
+        builder.setMessage("Thank you for your order. \n "+order+((order==1)?" cup":" cups")+" of "
+                +Temperature+" "+CoffeeType+" will be delivered to you within the next 15 minutes.\nBill amount: $"+bill+"\nStay put.  Remember, we always care for you.")
                 .setCancelable(false)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {

@@ -13,4 +13,5 @@
         <item>Iced</item>
     </array>
     <string name="exit">Exit</string>
+    <string name="ChangeOrder"><u>Change order</u></string>
 </resources>
