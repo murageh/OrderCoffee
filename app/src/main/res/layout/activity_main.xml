@@ -107,7 +107,7 @@
                 android:ems="10"
                 android:hint="Enter cups to order"
                 android:inputType="number"
-                android:padding="10sp"
+                android:padding="5sp"
                 android:textAlignment="center"
                 android:textColor="@android:color/holo_blue_dark"
                 android:textSize="24sp"

@@ -212,7 +212,7 @@ public class MainActivity extends AppCompatActivity {
                 .setPositiveButton("That's my name", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         name = nameGetter.getText().toString();
-                        txtUserSalutation.setText("Hello, "+name);
+                        txtUserSalutation.setText("Hello "+name);
                     }
                 });
         AlertDialog alert = builder.create();
